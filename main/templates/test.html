@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %} 
+
+{% block header %}
+<section id="home" class="video-hero" style="height: 100vh; background-image: url(/static/images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+  <div class="overlay"></div>
+  <div class="display-t display-t2 text-center" style="height: 100%;">
+    <div class="display-tc display-tc2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-0">
+            <div class="animate-box">
+              <h2>{{title}}</h2>
+              <p class="breadcrumbs"><span><a href="/{{return_url}}/">Вернуться</a></span> <span>{{title}}</span></p>
+            </div>
+            <div class="animate-box colorlib-counters">
+
+              {% if return_url == 'personal' %}
+              <div class="counter-entry">
+                <span class="icon"><i class="flaticon-ribbon"></i></span>
+                <div class="desc" id="colorlib-counter2">
+                  <span class="colorlib-counter js-counter" data-from="0" data-to="{{procrastination_level_personal}}" data-speed="5000" data-refresh-interval="50"></span>
+                  <div class="animate-box" id="test-result" style="display: none; position: absolute; width: 100%;">
+
+                    <span class="colorlib-counter-label">
+                      {% if procrastination_level_personal > 24 and procrastination_level_personal < 50 %}
+                        {{procrastination_result_2}}
+                      {% elif procrastination_level_personal > 49 and procrastination_level_personal < 75 %}
+                        {{procrastination_result_3}}
+                      {% elif procrastination_level_personal > 74 and procrastination_level_personal < 99 %}
+                        {{procrastination_result_4}}
+                      {% elif procrastination_level_personal > 99 %}
+                        {{procrastination_result_5}}
+                      {% else %}
+                        {{procrastination_result_1}}
+                      {% endif %}
+                    </span>
+                    <br>
+                    <a href="/test/{{return_url}}/" class="btn btn-primary btn-lg btn-custom">Пройти снова тестирование</a>
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <div class="counter-entry">
+                <span class="icon"><i class="flaticon-ribbon"></i></span>
+                <div class="desc" id="colorlib-counter2">
+                  <span class="colorlib-counter js-counter" data-from="0" data-to="{{procrastination_level_business}}" data-speed="5000" data-refresh-interval="50"></span>
+                  <div class="animate-box" id="test-result" style="display: none; position: absolute; width: 100%;">
+                    <span class="colorlib-counter-label">
+                      {% if procrastination_level_business > 24 and procrastination_level_business < 50 %}
+                        {{procrastination_result_2}}
+                      {% elif procrastination_level_business > 49 and procrastination_level_business < 75 %}
+                        {{procrastination_result_3}}
+                      {% elif procrastination_level_business > 74 and procrastination_level_business < 99 %}
+                        {{procrastination_result_4}}
+                      {% elif procrastination_level_business > 99 %}
+                        {{procrastination_result_5}}
+                      {% else %}
+                        {{procrastination_result_1}}
+                      {% endif %}
+                  </span>
+                    <br>
+                    <a href="/test/{{return_url}}/" class="btn btn-primary btn-lg btn-custom">Пройти снова тестирование</a>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}{% endblock %}

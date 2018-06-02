@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %} 
+
+{% block header %}
+<section id="home" class="video-hero" style="height: 100vh; background-image: url(/static/images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+  <div class="overlay"></div>
+  <div class="display-t display-t2 text-center" style="height: 100%;">
+    <div class="display-tc display-tc2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-md-offset-0">
+            <div class="animate-box">
+              <h2>{{title}}</h2>
+              <p class="breadcrumbs"><span><a href="/{{return_url}}/">Вернуться</a></span> <span>{{title}}</span></p>
+            </div>
+            <div class="animate-box colorlib-counters" style="
+                color: #fff;
+                font-size: 79px;
+                font-weight: 900;
+            ">
+
+              404
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}{% endblock %}

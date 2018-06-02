@@ -1,0 +1,82 @@
+{% extends 'main/base.html' %}
+
+{% block header %}
+    <section id="home" class="video-hero" style="height: 500px; background-image: url(/static/images/cover_img_1.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
+    <div class="overlay"></div>
+      <div class="display-t display-t2 text-center">
+        <div class="display-tc display-tc2">
+          <div class="container">
+            <div class="col-md-12 col-md-offset-0">
+              <div class="animate-box">
+                <h2>{{title}}</h2>
+                <p class="breadcrumbs"><span><a href="index.html">Главная</a></span> <span>{{title}}</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="colorlib-work">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="work-flex">
+              <div class="half animate-box">
+                <div class="row no-gutters">
+                  <div class="col-md-12 col-md-push-12 no-gutters">
+                    <a href="/personal/" class="work-img" style="background-image: url(/static/images/work-1.jpg);"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="half animate-box">
+                <div class="row no-gutters">
+                  <div class="col-md-12 col-md-pull-12 no-gutters">
+                    <div class="display-t desc">
+                      <div class="display-tc">
+                        <h2><a href="/personal/">Тестирование для частных клиентов</a></h2>
+                        <p>Будь в курсе своей личной эффективности прокрастинации</p>
+                        <a href="/personal/" class="btn btn-primary btn-lg btn-custom">Пройти тестирование</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="work-flex">
+              <div class="half animate-box">
+                <div class="row no-gutters">
+                  <div class="col-md-12 no-gutters">
+                    <a href="/business/" class="work-img" style="background-image: url(/static/images/work-2.jpg);"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="half animate-box">
+                <div class="row no-gutters">
+                  <div class="col-md-12 no-gutters">
+                    <div class="display-t desc">
+                      <div class="display-tc">
+                        <h2><a href="/business/">Тестирование для бизнес клиентов</a></h2>
+                        <p>Оцените уровень прокрастинации в вашей компании. Будьте в курсе изменений в любой момент времени.</p>
+                        <a href="/business/" class="btn btn-primary btn-lg btn-custom">Пройти тестирование</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

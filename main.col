@@ -1,0 +1,47 @@
+from random import randint
+
+%%
+
+[base]
+app_name: 'ProApp1'
+title: 'Главная'
+subscribe_email: 'you@yourwebsite.com'
+@menu.main<<
+    index => "Главная": page(index)
+    service => "Услуги": page(service)
+    personal => "Частный клиент": page(personal)
+    business => "Бизнес клиент": page(business)
+>>
+
+
+[base->index: /]
+
+
+[base->service: /service/ : service.html]
+title: 'Услуги'
+
+
+[base->personal: /personal/ : personal.html]
+title: 'Частный клиент'
+
+
+[base->business: /business/ : business.html]
+title: 'Бизнес клиент'
+
+
+[base->test: /test/<param1>/ : test.html]
+title: 'Тестирование онлайн'
+procrastination_level_personal: randint(10,100)
+procrastination_level_business: randint(50,110)
+return_url: format(url.param1)
+procrastination_result_1: 'Недостаточный уровень прокрастинации!'
+procrastination_result_2: 'Средний уровень прокрастинации!'
+procrastination_result_3: 'Очень хороший уровень прокрастинации!'
+procrastination_result_4: 'Великолепный уровень прокрастинации!'
+procrastination_result_5: 'Вы гений прокрастинации!'
+
+
+[base->page404]
+title: 'Страница не найдена!'
+
+@error(404)
